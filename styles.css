@@ -1,0 +1,733 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    backdrop-filter: blur(8px);
+    color: rgb(9, 67, 15);
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgb(9, 67, 15);
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    color: hsl(108, 44%, 68%);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+li a {
+    position: relative;
+    color: rgb(9, 67, 15);
+    font-weight: 300;
+    transition: 0.3s ease-in-out;
+}
+
+li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 0;
+    height: 5px;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #cf9306, hsl(110, 97%, 12%));
+    transition: width 0.3s ease-in-out;
+}
+
+li a:hover::before {
+    width: 100%;
+}
+
+.github-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(9, 67, 15);
+    font-size: 1.2rem;
+    background: linear-gradient(to right, #cf9306, rgb(9, 67, 15));
+    transition: 0.3s ease-in-out;
+    text-wrap: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.github-btn:hover {
+    transform: scale(1.1);
+    color: hsl(108, 44%, 68%);
+    background-color: rgb(9, 67, 15);
+}
+
+/* ==================================
+   BUG-07: ACCESSIBLE MOBILE MENU
+================================== */
+
+#menu-icon {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 0.75rem;
+    background: transparent;
+
+    font-size: 1.5rem;
+    color: rgb(9, 67, 15);
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Hover Effect */
+#menu-icon:hover {
+    background-color: rgba(9, 67, 15, 0.08);
+}
+
+/* Keyboard Focus */
+#menu-icon:focus-visible {
+    outline: 3px solid rgb(9, 67, 15);
+    outline-offset: 3px;
+}
+
+section {
+    min-height: 100vh;
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.about img {
+    width: 30vw;
+    border-radius: 50%;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.info-box h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.info-box h1 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.info-box span {
+    background-color: rgb(9, 67, 15);
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    border: 2px solid rgb(9, 67, 15);
+    font-weight: 500;
+    cursor: pointer;
+    text-wrap: nowrap;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(9, 67, 15);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    color: hsl(108, 44%, 68%);
+    background-color: rgb(9, 67, 15);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgb(9, 67, 15);
+    outline-offset: 4px;
+}
+
+/* ==================================
+   BUG-06: SOCIAL MEDIA LINKS
+================================== */
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Social Links */
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2.5rem;
+    color: rgb(9, 67, 15);
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: transform 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.socials a:hover {
+    transform: scale(1.1);
+    color: hsl(108, 44%, 68%);
+}
+
+/* Keyboard Accessibility */
+.socials a:focus-visible {
+    outline: 3px solid rgb(9, 67, 15);
+    outline-offset: 6px;
+    border-radius: 0.5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: rgb(9, 67, 15);
+    margin-bottom: 3rem;
+}
+
+.experience-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.experience img {
+    width: 24vw;
+    border-radius: 3rem;
+}
+
+/* ==================================
+   BUG-08: RESPONSIVE EXPERIENCE GRID
+================================== */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(100%, 280px), 1fr));
+
+    gap: 2rem;
+}
+
+.grid-card {
+    border: 2px solid rgb(9, 67, 15);
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.grid-card:hover {
+    transform: scale(1.02);
+    background-color: hsl(108, 44%, 68%);
+    color: rgb(9, 67, 15);
+}
+
+.grid-card i {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: rgb(9, 67, 15);
+    background-clip: text;
+    color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(9, 67, 15);
+    border-radius: 3rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(108, 44%, 68%);
+    border-radius: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 300px), 1fr)
+    );
+
+    gap: 2rem;
+}
+
+.project-card {
+    border: 2px solid rgb(9, 67, 15);
+    border-radius: 3rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    background-color: hsl(108, 44%, 68%);
+    color: rgb(9, 67, 15);
+}
+
+/* ==================================
+   BUG-09: RESPONSIVE PROJECT IMAGE
+================================== */
+
+.project-card img {
+    display: block;
+
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+
+    border-radius: 1.5rem;
+}
+
+.project-card .btn:hover {
+    transform: scale(1.1);
+    color: hsl(108, 44%, 68%);
+    background-color: rgb(9, 67, 15);
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.input-box input {
+    padding: 1rem 4rem;
+    border-radius: 3rem;
+    border: 2px solid rgb(9, 67, 15);
+    font-size: 1.2rem;
+    width: min(600px, 80vw);
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: rgb(9, 67, 15);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.input {
+    position: relative;
+}
+
+.input i {
+    position: absolute;
+    top: 50%;
+    left: 1.2rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgb(9, 67, 15);
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer ul li a {
+    color: black;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.copyright {
+    color: rgb(9, 67, 15);
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+@media (max-width: 1280px) {
+    header {
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .about .about-container {
+        gap: 3rem;
+    }
+
+    .experience-info {
+        flex-direction: column;
+    }
+
+    .input-box input {
+        padding: 2rem 5rem;
+        font-size: 2.5rem;
+    }
+
+    .input input::placeholder {
+        font-size: 2.5rem;
+    }
+
+    .input-box i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+
+    header .logo {
+        font-size: 1rem;
+    }
+
+    header .github-btn {
+        display: none;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .input-box input {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+
+    .input input::placeholder {
+        font-size: 1.5rem;
+    }
+
+    .input-box i {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .experience-info img {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 600px) {
+    header #menu-icon {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: calc(100% + 0.75rem);
+        left: 0;
+
+        width: 100%;
+        padding: 0.75rem;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        text-align: center;
+        gap: 0.25rem;
+        margin-top: 0;
+
+        border-radius: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    header {
+        width: calc(100% - 2rem);
+        max-width: 460px;
+
+        padding: 0.8rem 1.25rem;
+        gap: 0.75rem;
+
+        justify-content: space-between;
+
+        background-color: rgba(255, 255, 255, 0.92);
+    }
+
+    header .logo {
+        font-size: clamp(0.95rem, 4vw, 1.2rem);
+        white-space: nowrap;
+    }
+
+    .about-container img {
+        width: 80vw;
+    }
+
+    .input-box input {
+        padding: 0.5rem 3rem;
+        width: 80%;
+        font-size: 1.5rem;
+    }
+
+    .input input::placeholder {
+        font-size: 1.5rem;
+    }
+
+    footer ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+}
+
+/* ==================================
+   CONTACT FORM
+================================== */
+
+.contact .input-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+
+.contact .input {
+    position: relative;
+    width: 100%;
+}
+
+/* Input and Textarea */
+.contact .input-box input,
+.contact .input-box textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+
+    border: 2px solid rgb(9, 67, 15);
+    border-radius: 1.5rem;
+
+    background-color: white;
+    color: rgb(9, 67, 15);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+/* Email Icon Space */
+.contact .input-box input {
+    padding-left: 3.5rem;
+}
+
+/* Message Box */
+.contact .input-box textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Placeholder Text */
+.contact .input-box input::placeholder,
+.contact .input-box textarea::placeholder {
+    color: #607866;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Focus Effect */
+.contact .input-box input:focus,
+.contact .input-box textarea:focus {
+    outline: 3px solid hsl(108, 44%, 68%);
+    outline-offset: 2px;
+}
+
+/* Submit Button */
+.contact .input-box button.btn {
+    background-color: transparent;
+    color: rgb(9, 67, 15);
+}
+
+.contact .input-box button.btn:hover {
+    background-color: rgb(9, 67, 15);
+    color: hsl(108, 44%, 68%);
+}
+
+/* Keyboard Focus */
+.contact .input-box button.btn:focus-visible {
+    outline: 3px solid hsl(108, 44%, 68%);
+    outline-offset: 4px;
+}
+
+/* Accessible Labels */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==================================
+   BUG-04: RESPONSIVE HERO HEADING
+================================== */
+
+@media (max-width: 768px) {
+
+    .about .about-container,
+    .about .info-box,
+    .about .info-box .text {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .about .info-box h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        line-height: 1.2;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+    }
+
+}
+
+/* ==================================
+   BUG-09: MOBILE PROJECT LAYOUT
+================================== */
+
+@media (max-width: 600px) {
+
+    .projects {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .project-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .projects .btn-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
