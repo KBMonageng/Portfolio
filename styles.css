@@ -731,3 +731,15 @@ footer ul li a {
     }
 
 }
+
+/* Professional Introduction */
+
+.info-box .seo-intro {
+    max-width: 55ch;
+    margin: 1rem auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #48594B;
+    text-align: center;
+}
